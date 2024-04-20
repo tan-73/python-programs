@@ -3,10 +3,12 @@
 lst1 = [23, 47]
 lst2 = []
 lst3 = [1, 9]
-def enqueue(ele, priority) : 
+def enqueue() :
+    ele = int(input("Enter an element : "))
+    priority = input("Enter the priority (H/N/L) : ") 
     if priority == "H" : 
         lst1.append(ele)
-    elif priority == "M" : 
+    elif priority == "N" : 
         lst2.append(ele)
     elif priority == "L" : 
         lst3.append(ele)
@@ -49,10 +51,10 @@ def change() :
 
 def choice() : 
     while True : 
-        print("Enter your choice : \n1. Insert Element \n2. Search for Element\n 3. Change Priority")
+        print("Enter your choice : \n1. Insert Element \n2. Search for Element\n 3. Change Priority\n 4. Display queues")
         ch = int(input("Enter your choice : "))
         if ch == 1 : 
-            enqueue(ele, priority)
+            enqueue()
         elif ch == 2 : 
             search()
         elif ch == 3 : 
