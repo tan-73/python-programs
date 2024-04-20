@@ -3,7 +3,7 @@
 lst1 = [23, 47]
 lst2 = []
 lst3 = [1, 9]
-def enqueue() : 
+def enqueue(ele, priority) : 
     ele = int(input("Enter an element : "))
     priority = input("Enter the priority : high, medium or low")
     if priority == "high" : 
@@ -54,7 +54,7 @@ def choice() :
         print("Enter your choice : \n1. Insert Element \n2. Search for Element\n 3. Change Priority")
         ch = int(input("Enter your choice : "))
         if ch == 1 : 
-            enqueue()
+            enqueue(ele, priority)
         elif ch == 2 : 
             search()
         elif ch == 3 : 
@@ -62,4 +62,6 @@ def choice() :
         elif ch == 4 :
             display()
 # main
+ele = int(input("Enter an element : "))
+priority = input("Enter the priority (H/N/L) : ")
 choice()
