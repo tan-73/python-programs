@@ -62,6 +62,4 @@ def choice() :
         elif ch == 4 :
             display()
 # main
-ele = int(input("Enter an element : "))
-priority = input("Enter the priority (H/N/L) : ")
 choice()
