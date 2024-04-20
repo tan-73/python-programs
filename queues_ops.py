@@ -4,13 +4,11 @@ lst1 = [23, 47]
 lst2 = []
 lst3 = [1, 9]
 def enqueue(ele, priority) : 
-    ele = int(input("Enter an element : "))
-    priority = input("Enter the priority : high, medium or low")
-    if priority == "high" : 
+    if priority == "H" : 
         lst1.append(ele)
-    elif priority == "medium" : 
+    elif priority == "M" : 
         lst2.append(ele)
-    elif priority == "low" : 
+    elif priority == "L" : 
         lst3.append(ele)
         
 def dequeue() : 
