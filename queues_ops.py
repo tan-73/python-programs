@@ -74,7 +74,11 @@ def change() :
 
 def choice() : 
     while True : 
-        print("1. Insert Element \n2. Search for Element\n 3. Change Priority\n 4. Display queues")
+        print("\n1. Insert Element")
+        print("2. Search for Element")
+        print("3. Change Priority")
+        print("4. Display Queues")
+        print("5. Exit")
         ch = int(input("Enter your choice : "))
         if ch == 1 : 
             enqueue()
@@ -85,6 +89,8 @@ def choice() :
             change()
         elif ch == 4 :
             display()
+        elif ch == 5 : 
+            break
         else : 
             print("Wrong Choice")
 # main
