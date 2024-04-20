@@ -1,53 +1,75 @@
-# lst1 = [34, 52, 69, 420, 18]
+# HighestPr = [34, 52, 69, 420, 18]
 # ele = int(input("Enter an element : "))
-lst1 = [23, 47]
-lst2 = []
-lst3 = [1, 9]
+HighestPr = [23, 47]
+NormalPr = []
+LowestPr = [1, 9]
 def enqueue() :
-    ele = int(input("Enter an element : "))
+    ele = int(input("Enter the element : "))
     priority = input("Enter the priority (H/N/L) : ") 
     if priority == "H" : 
-        lst1.append(ele)
+        HighestPr.append(ele)
     elif priority == "N" : 
-        lst2.append(ele)
+        NormalPr.append(ele)
     elif priority == "L" : 
-        lst3.append(ele)
+        LowestPr.append(ele)
         
-def dequeue() : 
-    # pos = int(input("Enter the position : "))
-    priority = input("Enter the priority : ")
-    if priority == "high" :
-        del lst1[0]
-    elif priority == "medium" : 
-        del lst2[0]
-    elif priority == "low" : 
-        del lst3[0]
+def delete(element, queue_name) :
+    if queue_name == 1 : 
+        HighestPr.remove(element)
+    elif queue_name == 2 :
+        NormalPr.remove(element)
+    elif queue_name == 3 : 
+        LowestPr.remove(element)
 
 def display() : 
-    print(lst1)
-    print(lst2)
-    print(lst3)
+    print(HighestPr)
+    print(NormalPr)
+    print(LowestPr)
 
 def search(search_ele) : 
-    if search_ele in lst1 : 
-        return 1
-    elif search_ele in lst2 : 
-        return 2
-    elif search_ele in lst3 : 
-        return 3
+    if search_ele in HighestPr : 
+        print("Element found in HighestPr")
+        return "H"
+    elif search_ele in NormalPr : 
+        print("Element found in NormalPr")
+        return "N"
+    elif search_ele in LowestPr : 
+        print("Element found in LowestPr")
+        return "L"
+    else :
+        print("Element not found")
+        return 0
 
 def change() : 
+
     change_ele = int(input("Enter the element to be changed : "))
     search_cond = search(change_ele)
-    print(search_cond)
-    new_priority = input("Enter the new priority : ")
-    if new_priority == "high" : 
-        lst1.append(change_ele)
-    elif new_priority == "medium" : 
-        lst2.append(change_ele)
-    elif new_priority == "low" : 
-        lst3.append(change_ele)
+    if search_cond == 0 : 
+        return 0
+    update_priority = input("Want to increase or decrease it's priority? (I/D) : ")
+
+
     
+    if update_priority == "I" : 
+        if search_cond == "H" : 
+            print("Cannot increase priority")
+            return 0
+        elif search_cond == "N" : 
+            delete(change_ele, search_cond)
+            HighestPr.append(change_ele)
+        elif search_cond == "L": 
+            delete(change_ele, search_cond)
+            NormalPr.append(change_ele)
+    elif update_priority == "D" : 
+        if search_cond == "H" : 
+            delete(change_ele, search_cond)
+            NormalPr.append(change_ele)
+        elif search_cond == "N" : 
+            delete(change_ele, search_cond)
+            LowestPr.append(change_ele)
+        elif search_cond == "L" : 
+            print("Cannot decrease priority")
+            return 0
 
 def choice() : 
     while True : 
@@ -56,7 +78,8 @@ def choice() :
         if ch == 1 : 
             enqueue()
         elif ch == 2 : 
-            search()
+            search_ele = int(input("Enter the element to be searched : "))
+            search(search_ele)
         elif ch == 3 : 
             change()
         elif ch == 4 :
