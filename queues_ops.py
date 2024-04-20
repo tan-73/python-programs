@@ -1,5 +1,8 @@
 # HighestPr = [34, 52, 69, 420, 18]
 # ele = int(input("Enter an element : "))
+import time
+import psutil
+
 HighestPr = [23, 47]
 NormalPr = []
 LowestPr = [1, 9]
@@ -73,6 +76,8 @@ def change() :
             return 0
 
 def choice() : 
+    process = psutil.Process()
+    start_time = time.time()
     while True : 
         print("\n1. Insert Element")
         print("2. Search for Element")
@@ -90,8 +95,11 @@ def choice() :
         elif ch == 4 :
             display()
         elif ch == 5 : 
+            print(process.memory_info().rss)
             break
         else : 
             print("Wrong Choice")
+    end_time = time.time()
+    print(end_time - start_time)
 # main
 choice()
