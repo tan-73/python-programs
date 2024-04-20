@@ -3,6 +3,7 @@
 HighestPr = [23, 47]
 NormalPr = []
 LowestPr = [1, 9]
+
 def enqueue() :
     ele = int(input("Enter the element : "))
     priority = input("Enter the priority (H/N/L) : ") 
@@ -14,11 +15,11 @@ def enqueue() :
         LowestPr.append(ele)
         
 def delete(element, queue_name) :
-    if queue_name == 1 : 
+    if queue_name == "H" : 
         HighestPr.remove(element)
-    elif queue_name == 2 :
+    elif queue_name == "N" :
         NormalPr.remove(element)
-    elif queue_name == 3 : 
+    elif queue_name == "L" : 
         LowestPr.remove(element)
 
 def display() : 
@@ -73,7 +74,7 @@ def change() :
 
 def choice() : 
     while True : 
-        print("Enter your choice : \n1. Insert Element \n2. Search for Element\n 3. Change Priority\n 4. Display queues")
+        print("1. Insert Element \n2. Search for Element\n 3. Change Priority\n 4. Display queues")
         ch = int(input("Enter your choice : "))
         if ch == 1 : 
             enqueue()
@@ -84,5 +85,7 @@ def choice() :
             change()
         elif ch == 4 :
             display()
+        else : 
+            print("Wrong Choice")
 # main
 choice()
