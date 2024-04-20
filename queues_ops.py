@@ -1,5 +1,3 @@
-# HighestPr = [34, 52, 69, 420, 18]
-# ele = int(input("Enter an element : "))
 import time
 import psutil
 
@@ -16,7 +14,8 @@ def enqueue() :
         NormalPr.append(ele)
     elif priority == "L" : 
         LowestPr.append(ele)
-        
+
+
 def delete(element, queue_name) :
     if queue_name == "H" : 
         HighestPr.remove(element)
@@ -25,10 +24,12 @@ def delete(element, queue_name) :
     elif queue_name == "L" : 
         LowestPr.remove(element)
 
+
 def display() : 
     print(HighestPr)
     print(NormalPr)
     print(LowestPr)
+
 
 def search(search_ele) : 
     if search_ele in HighestPr : 
@@ -44,6 +45,7 @@ def search(search_ele) :
         print("Element not found")
         return 0
 
+
 def change() : 
 
     change_ele = int(input("Enter the element to be changed : "))
@@ -51,8 +53,6 @@ def change() :
     if search_cond == 0 : 
         return 0
     update_priority = input("Want to increase or decrease it's priority? (I/D) : ")
-
-
     
     if update_priority == "I" : 
         if search_cond == "H" : 
@@ -74,6 +74,7 @@ def change() :
         elif search_cond == "L" : 
             print("Cannot decrease priority")
             return 0
+
 
 def choice() : 
     process = psutil.Process()
@@ -101,5 +102,7 @@ def choice() :
             print("Wrong Choice")
     end_time = time.time()
     print(end_time - start_time)
+
+
 # main
 choice()
