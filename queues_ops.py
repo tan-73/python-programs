@@ -51,17 +51,15 @@ def change() :
 
 def choice() : 
     while True : 
-        print("Enter your choice : \n1. Enqueue \n2. Dequeue\n 3. Remove\n 4. Change priority\n 5. Display\n")
+        print("Enter your choice : \n1. Insert Element \n2. Search for Element\n 3. Change Priority")
         ch = int(input("Enter your choice : "))
         if ch == 1 : 
             enqueue()
         elif ch == 2 : 
-            dequeue()
+            search()
         elif ch == 3 : 
-            remove()
-        elif ch == 4 : 
             change()
-        elif ch == 5 :
+        elif ch == 4 :
             display()
 # main
 choice()
