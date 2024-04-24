@@ -1,6 +1,12 @@
 import math
 import random
 
+def isPrime(number) : 
+    for i in range(2, number) : 
+        if number % i == 0 : 
+            return False
+    return True
+
 p = random.randrange(214783, 2147483)
 q = random.randrange(214783, 2147483)
 print(p)
