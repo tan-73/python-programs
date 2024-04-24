@@ -20,3 +20,7 @@ str1 = "Hello World"
 # print(lst_str1)
 lst_ascii = [ord(ch) for ch in str1]
 print(lst_ascii)
+
+p = generate_prime()
+q = generate_prime()
+
