@@ -7,3 +7,4 @@ for i in range(0, 4):
     print("\r")
 
 print("This is a pattern of stars")
+print("Also to demonstrate in github")
