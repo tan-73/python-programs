@@ -10,7 +10,7 @@ def isPrime(number) :
 def generate_prime() : 
     prime = random.randint(7813, 78263)
     while not isPrime(prime) : 
-        prime = random.randint(7813, 78263)
+        prime = random.randint(7813, 78e263)
     return prime
 
 
